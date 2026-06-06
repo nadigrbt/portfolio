@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nadi Gorbatenko — Marketing Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F7F7F9;
+  --bg2: #eceef2;
+  --blue: #0062FF;
+  --blue-light: #E6EEFF;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --pink: #db2777;
+  --pink-light: #fdf2f8;
+  --orange: #ea6c00;
+  --orange-light: #fff7ed;
+  --green: #16a34a;
+  --green-light: #f0fdf4;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --card-shadow: 4px 4px 4px 0px rgba(0,0,0,0.15);
+  --radius: 20px;
+}
+
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+
+body {
+  font-family: 'Montserrat', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+h1, h2, h3, h4, .hero-h1, .s-title, .hero-name, .case-title, .stat-n, .met-v {
+  font-family: 'Unbounded', sans-serif;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+nav::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, #838E9E 50%, transparent 100%);
+}
+.nav-inner {
+  max-width: 860px; margin: 0 auto; padding: 0 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  height: 56px;
+}
+.nav-inner a {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+.nav-inner a:hover { opacity: 0.7; }
+
+/* ─── WRAP ─── */
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 48px; }
+
+/* ─── HERO ─── */
+.hero { padding: 40px 0 0; background: linear-gradient(180deg, rgba(131,142,158,0.07) 0%, transparent 100%); }
+.hero-name { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+.hero-email { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+.hero-photo {
+  width: 100%; aspect-ratio: 1/1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg2);
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.photo-fallback {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+  color: var(--muted); font-size: 13px; text-align: center; padding: 20px;
+  background: var(--bg2);
+}
+.photo-fallback .ini {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--blue-light); color: var(--blue);
+  font-size: 24px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.hero-right { padding-top: 8px; display: flex; flex-direction: column; }
+.hero-h1 {
+  font-size: clamp(22px, 2.8vw, 36px);
+  font-weight: 900; line-height: 1.3;
+  color: var(--text); margin-bottom: 0;
+  letter-spacing: -0.02em;
+}
+.hero-h1 .accent { color: var(--blue); }
+.hero-p {
+  font-size: 15px; color: var(--text);
+  line-height: 1.7; margin-bottom: 0;
+  max-width: 420px;
+  margin-top: 0;
+}
+.hero-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, #838E9E 0%, rgba(216,226,240,0) 100%);
+  margin: auto 0;
+}
+
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+.pill {
+  color: #4b5563;
+  font-size: 13px; font-weight: 500;
+  padding: 8px 18px; border-radius: 20px;
+}
+.pill:nth-child(1) { background: linear-gradient(to right, #E3F1FF, #F4D6D6); }
+.pill:nth-child(2) { background: linear-gradient(to right, #F4D7D8, #EEDAF5); }
+.pill:nth-child(3) { background: linear-gradient(to right, #EEDAF4, #E3F1FF); }
+.pill:nth-child(4) { background: linear-gradient(to right, #E3F0FE, #F4D7D8); }
+.pill:nth-child(5) { background: linear-gradient(to right, #F4D7D9, #EEDAF4); }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px; }
+.stat { text-align: center; padding: 0 8px; }
+.stat + .stat { border-left: 1px solid var(--border); }
+.stat-n { font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; margin-bottom: 6px; }
+.stat-l { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+/* ─── SECTIONS ─── */
+section { padding: 48px 0; }
+.s-tag {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 10px;
+}
+.s-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900; line-height: 1.1;
+  color: var(--text); margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.s-desc { font-size: 15px; color: var(--muted); margin-bottom: 40px; line-height: 1.7; }
+
+/* ─── ABOUT ─── */
+.about-intro {
+  font-size: 15px; color: var(--muted);
+  line-height: 1.75; margin-bottom: 28px;
+}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.acard {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--card-shadow);
+}
+.acard h3 { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 8px; }
+.acard p { font-size: 13px; color: #374151; line-height: 1.65; }
+
+/* ─── CASES ─── */
+.cases { display: flex; flex-direction: column; gap: 20px; }
+.case {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.case-top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 24px;
+  flex-wrap: wrap; gap: 6px;
+}
+.case-niche { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.case-role { font-size: 12px; color: #6b7280; }
+.case-body { padding: 24px; }
+.case-title { font-size: 22px; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--text); }
+.case-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+
+/* case colors */
+.case.traveltech .case-top { background: linear-gradient(to bottom, #A6C0FF, #FFFFFF); }
+.case.traveltech .case-niche { color: var(--purple); }
+.case.clinic .case-top { background: linear-gradient(to bottom, #ACCCFF, #FFFFFF); }
+.case.clinic .case-niche { color: var(--blue); }
+.case.beauty .case-top { background: linear-gradient(to bottom, #FFE2F7, #FFFFFF); }
+.case.beauty .case-niche { color: var(--pink); }
+.case.restaurant .case-top { background: linear-gradient(to bottom, #FCE1C6, #FFFFFF); }
+.case.restaurant .case-niche { color: var(--orange); }
+.case.travel .case-top { background: linear-gradient(to bottom, #C6FCE7, #FFFFFF); }
+.case.travel .case-niche { color: var(--green); }
+
+.metrics {
+  display: flex; gap: 0;
+  margin-bottom: 20px; text-align: center;
+}
+.met { flex: 1; padding: 8px 4px; }
+.met + .met { border-left: 1px solid var(--border); }
+.met-v { font-size: 28px; font-weight: 900; color: var(--text); line-height: 1; margin-bottom: 6px; }
+.met-l { font-size: 12px; color: var(--muted); line-height: 1.35; }
+
+.case-what { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+.case-what strong { color: var(--text); font-weight: 600; }
+
+.blist { list-style: none; padding: 0; }
+.blist li {
+  font-size: 13px; color: #374151;
+  padding: 2px 0 2px 14px;
+  position: relative;
+}
+.blist li::before { content: '·'; position: absolute; left: 0; color: var(--muted); }
+
+/* ─── SERVICES ─── */
+.svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.svc { border-radius: 20px; padding: 24px; box-shadow: var(--card-shadow); }
+.svc.s1 { background: linear-gradient(to right, #E3F1FF, #EEECF4); }
+.svc.s2 { background: linear-gradient(to right, #F6F8FF, #EEEBF3); }
+.svc.s3 { background: linear-gradient(to right, #F0D7F3, #EEECF4); }
+.svc.s4 { background: linear-gradient(to right, #EEECF4, #F2E0E6); }
+.svc h3 { font-size: 15px; font-weight: 700; color: var(--blue); margin-bottom: 10px; }
+.svc p { font-size: 13px; color: #374151; line-height: 1.65; }
+
+/* ─── WHY ─── */
+.why-list { display: flex; flex-direction: column; gap: 12px; }
+.why {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--card-shadow);
+}
+.why h4 { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+.why p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* ─── CONTACT ─── */
+.contact-section { padding: 72px 0 120px; }
+.contact-section .wrap { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.contact-statement {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 900; line-height: 1.15;
+  color: var(--text); margin-bottom: 120px;
+  letter-spacing: -0.02em;
+  max-width: 640px;
+}
+.contact-email-pill {
+  display: inline-block;
+  background: linear-gradient(to right, #EEDAF4, #E3F1FF);
+  border-radius: 20px;
+  padding: 16px 48px;
+  font-size: 16px; font-weight: 700;
+  color: var(--text); text-decoration: none;
+  transition: opacity 0.2s;
+  box-shadow: var(--card-shadow);
+}
+.contact-email-pill:hover { opacity: 0.8; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 640px) {
+  .nav-inner { gap: 16px; overflow-x: auto; justify-content: flex-start; padding: 0 16px; }
+  .nav-inner a { font-size: 10px; white-space: nowrap; }
+  .wrap { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+
+  .hero { padding: 32px 0 36px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-photo { width: 200px; aspect-ratio: 1/1; margin: 0 auto; }
+  .hero-h1 { font-size: 32px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat + .stat { border-left: none; }
+  .stat { border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .svc-grid { grid-template-columns: 1fr; }
+
+  .case-top { flex-direction: column; align-items: flex-start; }
+  .metrics { flex-wrap: wrap; }
+  .met { min-width: 33%; }
+  .met + .met { border-left: none; }
+
+  .contact-statement { font-size: 24px; }
+  section { padding: 48px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Work With Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none;">
+  <div class="wrap">
+    <div class="hero-name">Nadi Gorbatenko</div>
+    <div class="hero-email">nadigrbt@gmail.com</div>
+
+    <div class="hero-grid">
+      <div class="hero-photo">
+        <img src="photo.jpg" alt="Nadi Gorbatenko"
+          onerror="this.parentElement.innerHTML='<div class=\'photo-fallback\'><div class=\'ini\'>NG</div><span>Добавь photo.jpg<br>в эту папку</span></div>'">
+      </div>
+      <div class="hero-right">
+        <h1 class="hero-h1">Marketing that<br>builds <span class="accent">systems,</span><br>not just traffic</h1>
+        <hr class="hero-divider">
+        <p class="hero-p">I'm Nadi Gorbatenko – growth marketer &amp; founder helping businesses turn traffic into leads, customers and predictable growth.</p>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill">Performance Marketing</span>
+      <span class="pill">Lead Generation</span>
+      <span class="pill">Meta Ads (Facebook &amp; Instagram)</span>
+      <span class="pill">Product &amp; Growth</span>
+      <span class="pill">CRM &amp; Automation</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-n">8x</div>
+        <div class="stat-l">Max lead cost reduction in one project</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">5x</div>
+        <div class="stat-l">Lead volume increase for restaurant client</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">6.5K</div>
+        <div class="stat-l">Daily users on my own TravelTech product</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">70%</div>
+        <div class="stat-l">Bookings automated without human touch</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="s-tag">About</div>
+    <h2 class="s-title">Founder.<br>Strategist. System builder.</h2>
+    <p class="about-intro">I don't just run ads — I build the full marketing infrastructure that makes businesses grow sustainably.</p>
+
+    <div class="about-grid">
+      <div class="acard" style="grid-column:1/-1;">
+        <h3>Who I am</h3>
+        <p>I'm the founder of PolarLights.pro, a TravelTech platform I built from scratch that now reaches users across Europe and the United States. My background spans performance marketing, product development, CRM automation, and growth strategy. I've worked across highly regulated niches (medical aesthetics, tourism), franchise networks, and product startups – which means I understand how to build marketing that fits complex business realities, not just simple funnels.</p>
+      </div>
+      <div class="acard">
+        <h3>International experience</h3>
+        <p>I've attracted international audiences for tourism clients from China and India, built an English-language product used by aurora hunters across Europe and the US, and managed advertising campaigns across multiple international platforms outside standard ecosystems.</p>
+      </div>
+      <div class="acard">
+        <h3>Beyond just ads</h3>
+        <p>I built my own SaaS for personalised messaging and integrated it with client CRMs. I understand the full stack – from ad creative to CRM logic to retention flows – which means I can spot problems others miss.</p>
+      </div>
+      <div class="acard">
+        <h3>How I work</h3>
+        <p>Fully remote. Async-friendly – I communicate clearly in writing and deliver structured updates. I work with clients across time zones and I'm comfortable with US market expectations.</p>
+      </div>
+      <div class="acard">
+        <h3>Niches I know well</h3>
+        <p>Beauty &amp; aesthetics &nbsp;·&nbsp; Medical clinics &nbsp;·&nbsp; Tourism &amp; travel &nbsp;·&nbsp; Restaurants &amp; F&amp;B &nbsp;·&nbsp; Franchise businesses &nbsp;·&nbsp; Digital products &amp; apps</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="wrap">
+    <div class="s-tag">Case Studies</div>
+    <h2 class="s-title">Real results,<br>real businesses.</h2>
+    <p class="s-desc">A selection of projects across different niches – each one built around measurable outcomes.</p>
+
+    <div class="cases">
+
+      <!-- POLARLIGHTS -->
+      <div class="case traveltech">
+        <div class="case-top">
+          <span class="case-niche">TravelTech · Own Product</span>
+          <span class="case-role">Founder · Product Lead · Growth</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">PolarLights.pro – TravelTech Platform I Built from Scratch</div>
+          <p class="case-desc">I founded and built PolarLights.pro – an aurora borealis forecasting platform with an interactive map, KP-index predictions, push notification mobile app, and a travel ecosystem connecting aurora tracking with Northern tourism. Fully founder-led from idea to a product with an international user base.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">6500</div><div class="met-l">Users/day at peak</div></div>
+            <div class="met"><div class="met-v">100</div><div class="met-l">App installs daily</div></div>
+            <div class="met"><div class="met-v">🌍</div><div class="met-l">US, EU, Asia users</div></div>
+          </div>
+          <p class="case-what"><strong>What I did:</strong> Conceived and designed the product. Built UX/UI and product architecture. Integrated scientific data sources (NOAA) for real-time forecasting. Launched mobile app with push notifications and managed ASO. Built full SEO strategy and content ecosystem. Localised the product for Chinese, Finnish, Norwegian, and English-speaking audiences. Developed monetisation model. This is the only project in my portfolio where I was the client, the marketer, and the product owner simultaneously.</p>
+          <ul class="blist">
+            <li>Product strategy</li>
+            <li>Mobile app</li>
+            <li>International SEO</li>
+            <li>Growth hacking</li>
+            <li>Localisation</li>
+            <li>Monetisation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- A&J -->
+      <div class="case clinic">
+        <div class="case-top">
+          <span class="case-niche">Medical Aesthetics</span>
+          <span class="case-role">Full Marketing Stack · Automation · SaaS</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">A&amp;J Aesthetic Clinic – Full Marketing &amp; Automation Overhaul</div>
+          <p class="case-desc">A multi-channel aesthetic clinic struggling with expensive ads, losing hot leads across fragmented channels, overloaded admins, and zero automation. I redesigned their entire marketing and operations infrastructure – including building a proprietary SaaS tool for client communications.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">3×</div><div class="met-l">Marketing cost reduction</div></div>
+            <div class="met"><div class="met-v">70%</div><div class="met-l">Bookings automated</div></div>
+            <div class="met"><div class="met-v">SaaS</div><div class="met-l">Custom tool built</div></div>
+          </div>
+          <p class="case-what"><strong>What I did:</strong> Built the clinic's first proper website and relaunched paid search – reducing cost-per-visit significantly. Implemented a CRM to unify all inbound channels. Created a proprietary messaging SaaS integrated directly with the CRM. Segmented the patient database and introduced AI-assisted personalised offers. Automated 70% of appointment bookings end-to-end.</p>
+          <ul class="blist">
+            <li>CRM implementation</li>
+            <li>Custom SaaS</li>
+            <li>Marketing automation</li>
+            <li>Paid search</li>
+            <li>AI personalisation</li>
+            <li>Database segmentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IDOL FACE -->
+      <div class="case beauty">
+        <div class="case-top">
+          <span class="case-niche">Beauty · Franchise</span>
+          <span class="case-role">Performance Marketing · CRM · Retention</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Idol Face – Face-Lifting Studio Franchise</div>
+          <p class="case-desc">A natural rejuvenation studio franchise with locations across Europe. I built a complete lead generation and client retention system from scratch – replacing fragmented, expensive marketing with a scalable, data-driven infrastructure.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">8×</div><div class="met-l">Lead cost reduction</div></div>
+            <div class="met"><div class="met-v">$3–4</div><div class="met-l">Cost per lead (from $22)</div></div>
+            <div class="met"><div class="met-v">↑</div><div class="met-l">Repeat bookings</div></div>
+          </div>
+          <p class="case-what"><strong>What I did:</strong> Rebuilt the paid acquisition system and reduced lead cost from $22 to $3–4 while improving traffic quality. Redesigned the website with conversion-focused logic to improve lead flow and booking rates. Implemented analytics and performance tracking across all channels to identify drop-off points and optimise ROI.</p>
+          <ul class="blist">
+            <li>Lead generation</li>
+            <li>CRM automation</li>
+            <li>Retention flows</li>
+            <li>Performance ads</li>
+            <li>Website conversion</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RESTAURANT -->
+      <div class="case restaurant">
+        <div class="case-top">
+          <span class="case-niche">Restaurant · F&amp;B</span>
+          <span class="case-role">Performance Marketing · Lead Generation</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Restaurant Group – Performance Marketing Turnaround</div>
+          <p class="case-desc">A restaurant project with high lead costs, poor traffic quality, and a high bounce rate. I audited the full digital funnel and rebuilt the acquisition strategy from the ground up.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">5×</div><div class="met-l">More leads</div></div>
+            <div class="met"><div class="met-v">−30%</div><div class="met-l">Cost per lead</div></div>
+            <div class="met"><div class="met-v">−25%</div><div class="met-l">Bounce rate</div></div>
+          </div>
+          <ul class="blist">
+            <li>Campaign audit</li>
+            <li>Budget reallocation</li>
+            <li>Funnel optimisation</li>
+            <li>Traffic quality</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- KOLA -->
+      <div class="case travel">
+        <div class="case-top">
+          <span class="case-niche">Tourism · Travel</span>
+          <span class="case-role">Growth Marketing · International Markets</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Kola Peninsula Tours – Regional Market Leader</div>
+          <p class="case-desc">Took a tourism startup with an outdated website, expensive leads, and no analytics – and scaled it into one of the most recognised names in regional adventure tourism. Maintained lead flow through two major economic crises.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">#1</div><div class="met-l">Regional tourism leader</div></div>
+            <div class="met"><div class="met-v">↓</div><div class="met-l">Lowest CPL in region</div></div>
+            <div class="met"><div class="met-v">🌍</div><div class="met-l">China &amp; India markets</div></div>
+          </div>
+          <p class="case-what"><strong>What I did:</strong> Full website redesign with conversion-first architecture. Multi-channel lead generation system. SEO strategy and content marketing. CRM setup with client segmentation and retention flows. International campaigns targeting China and India – including adaptation of messaging and management of foreign ad platforms. Managed the marketing team and all contractors.</p>
+          <ul class="blist">
+            <li>International marketing</li>
+            <li>SEO &amp; content</li>
+            <li>CRM &amp; retention</li>
+            <li>Crisis marketing</li>
+            <li>Team management</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="s-tag">Services</div>
+    <h2 class="s-title">What I can do<br>for your business</h2>
+    <p class="s-desc">I work as a strategic partner, not just an executor.<br>Here's where I bring the most value.</p>
+    <div class="svc-grid">
+      <div class="svc s1">
+        <h3>Meta Ads</h3>
+        <p>Full campaign setup and management: strategy, audience research, creative direction, A/B testing, budget optimisation, and reporting. I build campaigns that scale, not just spend.</p>
+      </div>
+      <div class="svc s2">
+        <h3>Marketing System Build</h3>
+        <p>For businesses that need more than ads — I design and implement the full acquisition and retention infrastructure: CRM, automation, lead nurturing flows, and analytics.</p>
+      </div>
+      <div class="svc s3">
+        <h3>Audit &amp; Strategy</h3>
+        <p>A full audit of your current marketing funnel – where leads are lost, what's expensive, what's underperforming. Delivered as a clear action plan with priorities and expected outcomes.</p>
+      </div>
+      <div class="svc s4">
+        <h3>Ongoing Growth Partnership</h3>
+        <p>Monthly retainer for businesses that want a dedicated marketing lead without hiring full-time. I manage campaigns, track results, and continuously optimise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="s-tag">Why Work With Me</div>
+    <h2 class="s-title">I've been on<br>both sides of the table.</h2>
+    <p class="s-desc">As a founder and a marketer, I bring a perspective most specialists don't have.</p>
+    <div class="why-list">
+      <div class="why">
+        <h4>01. I think in systems</h4>
+        <p>I've built marketing infrastructure from scratch multiple times – websites, CRMs, automation tools, analytics. When I run your ads, I'm also thinking about what happens after the click.</p>
+      </div>
+      <div class="why">
+        <h4>02. I've built my own product</h4>
+        <p>PolarLights.pro is a live, working platform I designed, built, and grew to thousands of daily users internationally. I understand what it feels like to stake your own money and reputation on a marketing decision.</p>
+      </div>
+      <div class="why">
+        <h4>03. I've worked in genuinely hard niches</h4>
+        <p>Medical advertising, franchise marketing across multiple locations, international tourism to remote destinations – if I can make those work, I can make yours work.</p>
+      </div>
+      <div class="why">
+        <h4>04. Clear, async communication</h4>
+        <p>I work remotely and communicate in writing – structured updates, clear reasoning, no jargon. You always know what's happening and why.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <p class="contact-statement">I'm always open to interesting conversations about growth, marketing and building better acquisition systems.</p>
+    <a href="mailto:nadigrbt@gmail.com" class="contact-email-pill">nadigrbt@gmail.com</a>
+  </div>
+</section>
+
+<script>
+  if (history.scrollRestoration) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+</script>
+</body>
+</html>
