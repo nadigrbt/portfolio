@@ -5,7 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nadi Gorbatenko — Marketing Strategist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Bounded';
+  src: url('Bounded-Black.ttf') format('truetype');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -40,7 +49,7 @@ body {
 }
 
 h1, h2, h3, h4, .hero-h1, .s-title, .hero-name, .case-title, .stat-n, .met-v {
-  font-family: 'Unbounded', sans-serif;
+  font-family: 'Bounded', sans-serif;
 }
 
 /* ─── NAV ─── */
@@ -75,7 +84,8 @@ nav::after {
 /* ─── HERO ─── */
 .hero { padding: 40px 0 0; background: linear-gradient(180deg, rgba(131,142,158,0.07) 0%, transparent 100%); }
 .hero-name { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
-.hero-email { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+.hero-email { font-size: 14px; color: var(--muted); margin-bottom: 32px; text-decoration: none; display: block; }
+.hero-email:hover { color: var(--blue); }
 
 .hero-grid {
   display: grid;
@@ -323,7 +333,7 @@ section { padding: 48px 0; }
 <section class="hero" style="border-top:none;">
   <div class="wrap">
     <div class="hero-name">Nadi Gorbatenko</div>
-    <div class="hero-email">nadigrbt@gmail.com</div>
+    <a class="hero-email" href="mailto:nadigrbt@gmail.com">nadigrbt@gmail.com</a>
 
     <div class="hero-grid">
       <div class="hero-photo">
