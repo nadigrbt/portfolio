@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Надежда Горбатенко — Маркетолог-стратег</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230062FF'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' fill='white'>Н</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Bounded';
+  src: url('Bounded-Black.ttf') format('truetype');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F7F7F9;
+  --bg2: #eceef2;
+  --blue: #0062FF;
+  --blue-light: #E6EEFF;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --pink: #db2777;
+  --pink-light: #fdf2f8;
+  --orange: #ea6c00;
+  --orange-light: #fff7ed;
+  --green: #16a34a;
+  --green-light: #f0fdf4;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --card-shadow: 4px 4px 4px 0px rgba(0,0,0,0.15);
+  --radius: 20px;
+}
+
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+
+body {
+  font-family: 'Montserrat', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+h1, h2, h3, h4, .hero-h1, .s-title, .hero-name, .case-title, .stat-n, .met-v {
+  font-family: 'Bounded', sans-serif;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+nav::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, #838E9E 50%, transparent 100%);
+}
+.nav-inner {
+  max-width: 860px; margin: 0 auto; padding: 0 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  height: 56px;
+}
+.nav-inner a {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+.nav-inner a:hover { opacity: 0.7; }
+
+/* ─── WRAP ─── */
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 48px; }
+
+/* ─── HERO ─── */
+.hero { padding: 40px 0 0; background: linear-gradient(180deg, rgba(131,142,158,0.07) 0%, transparent 100%); }
+.hero-name { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+.hero-email { font-size: 14px; color: var(--muted); margin-bottom: 32px; text-decoration: none; display: block; }
+.hero-email:hover { color: var(--blue); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+.hero-photo {
+  width: 100%; aspect-ratio: 1/1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg2);
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.photo-fallback {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+  color: var(--muted); font-size: 13px; text-align: center; padding: 20px;
+  background: var(--bg2);
+}
+.photo-fallback .ini {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--blue-light); color: var(--blue);
+  font-size: 24px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.hero-right { padding-top: 8px; display: flex; flex-direction: column; }
+.hero-h1 {
+  font-size: clamp(22px, 2.8vw, 36px);
+  font-weight: 900; line-height: 1.3;
+  color: var(--text); margin-bottom: 0;
+  letter-spacing: -0.02em;
+}
+.hero-h1 .accent { color: var(--blue); }
+.hero-p {
+  font-size: 15px; color: var(--text);
+  line-height: 1.7; margin-bottom: 0;
+  max-width: 420px;
+  margin-top: 0;
+}
+.hero-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, #838E9E 0%, rgba(216,226,240,0) 100%);
+  margin: auto 0;
+}
+
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+.pill {
+  color: #4b5563;
+  font-size: 13px; font-weight: 500;
+  padding: 8px 18px; border-radius: 20px;
+}
+.pill:nth-child(1) { background: linear-gradient(to right, #E3F1FF, #F4D6D6); }
+.pill:nth-child(2) { background: linear-gradient(to right, #F4D7D8, #EEDAF5); }
+.pill:nth-child(3) { background: linear-gradient(to right, #EEDAF4, #E3F1FF); }
+.pill:nth-child(4) { background: linear-gradient(to right, #E3F0FE, #F4D7D8); }
+.pill:nth-child(5) { background: linear-gradient(to right, #F4D7D9, #EEDAF4); }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px; }
+.stat { text-align: center; padding: 0 8px; }
+.stat + .stat { border-left: 1px solid var(--border); }
+.stat-n { font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; margin-bottom: 6px; }
+.stat-l { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+/* ─── SECTIONS ─── */
+section { padding: 48px 0; }
+.s-tag {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 10px;
+}
+.s-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900; line-height: 1.1;
+  color: var(--text); margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.s-desc { font-size: 15px; color: var(--muted); margin-bottom: 40px; line-height: 1.7; }
+
+/* ─── ABOUT ─── */
+.about-intro {
+  font-size: 15px; color: var(--muted);
+  line-height: 1.75; margin-bottom: 28px;
+}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.acard {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--card-shadow);
+}
+.acard h3 { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 8px; }
+.acard p { font-size: 13px; color: #374151; line-height: 1.65; }
+
+/* ─── CASES ─── */
+.cases { display: flex; flex-direction: column; gap: 20px; }
+.case {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.case-top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 24px;
+  flex-wrap: wrap; gap: 6px;
+}
+.case-niche { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.case-role { font-size: 12px; color: #6b7280; }
+.case-body { padding: 24px; }
+.case-title { font-size: 22px; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--text); }
+.case-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+
+/* case colors */
+.case.traveltech .case-top { background: linear-gradient(to bottom, #A6C0FF, #FFFFFF); }
+.case.traveltech .case-niche { color: var(--purple); }
+.case.clinic .case-top { background: linear-gradient(to bottom, #ACCCFF, #FFFFFF); }
+.case.clinic .case-niche { color: var(--blue); }
+.case.beauty .case-top { background: linear-gradient(to bottom, #FFE2F7, #FFFFFF); }
+.case.beauty .case-niche { color: var(--pink); }
+.case.restaurant .case-top { background: linear-gradient(to bottom, #FCE1C6, #FFFFFF); }
+.case.restaurant .case-niche { color: var(--orange); }
+.case.travel .case-top { background: linear-gradient(to bottom, #C6FCE7, #FFFFFF); }
+.case.travel .case-niche { color: var(--green); }
+
+.metrics {
+  display: flex; gap: 0;
+  margin-bottom: 20px; text-align: center;
+}
+.met { flex: 1; padding: 8px 4px; }
+.met + .met { border-left: 1px solid var(--border); }
+.met-v { font-size: 28px; font-weight: 900; color: var(--text); line-height: 1; margin-bottom: 6px; }
+.met-l { font-size: 12px; color: var(--muted); line-height: 1.35; }
+
+.case-what { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+.case-what strong { color: var(--text); font-weight: 600; }
+
+.blist { list-style: none; padding: 0; }
+.blist li {
+  font-size: 13px; color: #374151;
+  padding: 2px 0 2px 14px;
+  position: relative;
+}
+.blist li::before { content: '·'; position: absolute; left: 0; color: var(--muted); }
+
+/* ─── SERVICES ─── */
+.svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.svc { border-radius: 20px; padding: 24px; box-shadow: var(--card-shadow); }
+.svc.s1 { background: linear-gradient(to right, #E3F1FF, #EEECF4); }
+.svc.s2 { background: linear-gradient(to right, #F6F8FF, #EEEBF3); }
+.svc.s3 { background: linear-gradient(to right, #F0D7F3, #EEECF4); }
+.svc.s4 { background: linear-gradient(to right, #EEECF4, #F2E0E6); }
+.svc h3 { font-size: 15px; font-weight: 700; color: var(--blue); margin-bottom: 10px; }
+.svc p { font-size: 13px; color: #374151; line-height: 1.65; }
+
+/* ─── WHY ─── */
+.why-list { display: flex; flex-direction: column; gap: 12px; }
+.why {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--card-shadow);
+}
+.why h4 { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+.why p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* ─── CONTACT ─── */
+.contact-section { padding: 72px 0 120px; }
+.contact-section .wrap { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.contact-statement {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 900; line-height: 1.15;
+  color: var(--text); margin-bottom: 120px;
+  letter-spacing: -0.02em;
+  max-width: 640px;
+}
+.contact-email-pill {
+  display: inline-block;
+  background: linear-gradient(to right, #EEDAF4, #E3F1FF);
+  border-radius: 20px;
+  padding: 16px 48px;
+  font-size: 16px; font-weight: 700;
+  color: var(--text); text-decoration: none;
+  transition: opacity 0.2s;
+  box-shadow: var(--card-shadow);
+}
+.contact-email-pill:hover { opacity: 0.8; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 640px) {
+  .nav-inner { gap: 16px; overflow-x: auto; justify-content: flex-start; padding: 0 16px; }
+  .nav-inner a { font-size: 10px; white-space: nowrap; }
+  .wrap { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+
+  .hero { padding: 32px 0 0; }
+  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+  .hero-photo { width: 100%; aspect-ratio: 1/1; margin: 0; }
+  .hero-h1 { font-size: 32px; }
+  .hero-right { display: flex; flex-direction: column; }
+  .hero-divider { margin: 24px 0; }
+  .hero-p { margin-top: 0; margin-bottom: 24px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat + .stat { border-left: none; }
+  .stat { border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .svc-grid { grid-template-columns: 1fr; }
+
+  .case-top { flex-direction: column; align-items: flex-start; }
+  .metrics { flex-wrap: wrap; }
+  .met { min-width: 33%; }
+  .met + .met { border-left: none; }
+
+  .contact-statement { font-size: 24px; }
+  section { padding: 48px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#about">Обо мне</a>
+    <a href="#cases">Кейсы</a>
+    <a href="#services">Услуги</a>
+    <a href="#why">Почему я</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none;">
+  <div class="wrap">
+    <div class="hero-name">Надежда Горбатенко</div>
+    <a class="hero-email" href="https://t.me/nadigrbt" target="_blank">@nadigrbt</a>
+
+    <div class="hero-grid">
+      <div class="hero-photo">
+        <img src="photo.jpg" alt="Надежда Горбатенко"
+          onerror="this.parentElement.innerHTML='<div class=\'photo-fallback\'><div class=\'ini\'>НГ</div><span>Добавь photo.jpg<br>в эту папку</span></div>'">
+      </div>
+      <div class="hero-right">
+        <h1 class="hero-h1">Маркетинг, который строит <span class="accent">системы</span>,<br>а не просто трафик</h1>
+        <hr class="hero-divider">
+        <p class="hero-p">Надежда Горбатенко — маркетолог и основатель, помогаю бизнесам превращать трафик в заявки, клиентов и предсказуемый рост.</p>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill">Перформанс-маркетинг</span>
+      <span class="pill">Лидогенерация</span>
+      <span class="pill">Рекламные площадки</span>
+      <span class="pill">Продукт и рост</span>
+      <span class="pill">CRM и автоматизация</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-n">8x</div>
+        <div class="stat-l">Снижение стоимости лида в одном из проектов</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">5x</div>
+        <div class="stat-l">Рост количества заявок для ресторанного клиента</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">6.5K</div>
+        <div class="stat-l">Пользователей в день на собственном TravelTech продукте</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">70%</div>
+        <div class="stat-l">Записей автоматизировано без участия администратора</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="s-tag">Обо мне</div>
+    <h2 class="s-title">Маркетолог.<br>Стратег. Строитель систем.</h2>
+    <p class="about-intro">Я не просто запускаю рекламу — я строю полную маркетинговую инфраструктуру, которая обеспечивает устойчивый рост бизнеса.</p>
+
+    <div class="about-grid">
+      <div class="acard" style="grid-column:1/-1;">
+        <h3>Кто я</h3>
+        <p>Я основатель PolarLights.pro — TravelTech платформы, которую создала с нуля и вывела на пользователей по всей Европе и США. Мой опыт охватывает перформанс-маркетинг, продуктовую разработку, CRM-автоматизацию и стратегию роста. Работала в высококонкурентных нишах (медицинская эстетика, туризм), с франшизными сетями и продуктовыми стартапами — понимаю как строить маркетинг под реальные бизнес-задачи, а не простые воронки.</p>
+      </div>
+      <div class="acard">
+        <h3>Международный опыт</h3>
+        <p>Привлекала международные аудитории для туристических клиентов из Китая и Индии. Создала англоязычный продукт для охотников за северным сиянием по всей Европе и США. Управляла рекламными кампаниями на зарубежных платформах за пределами стандартных экосистем.</p>
+      </div>
+      <div class="acard">
+        <h3>Не только реклама</h3>
+        <p>Создала собственный SaaS для персонализированных сообщений и интегрировала его с CRM клиентов. Понимаю весь стек — от рекламного объявления до логики CRM и цепочек удержания клиентов — что позволяет находить проблемы, которые другие упускают.</p>
+      </div>
+      <div class="acard">
+        <h3>Как я работаю</h3>
+        <p>Полностью удалённо. Общаюсь письменно — структурированно и чётко, без лишних звонков. Работаю с клиентами в разных часовых поясах, знакома со стандартами работы на российском, европейском и американском рынках.</p>
+      </div>
+      <div class="acard">
+        <h3>Ниши, в которых работала</h3>
+        <p>Красота и эстетика &nbsp;·&nbsp; Медицинские клиники &nbsp;·&nbsp; Туризм и путешествия &nbsp;·&nbsp; Рестораны и F&amp;B &nbsp;·&nbsp; Франшизы &nbsp;·&nbsp; Digital продукты и приложения</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="wrap">
+    <div class="s-tag">Некоторые кейсы</div>
+    <h2 class="s-title">Реальные результаты,<br>реальные бизнесы.</h2>
+    <p class="s-desc">Подборка проектов из разных ниш — каждый построен вокруг измеримых результатов.</p>
+
+    <div class="cases">
+
+      <!-- POLARLIGHTS -->
+      <div class="case traveltech">
+        <div class="case-top">
+          <span class="case-niche">TravelTech · Собственный продукт</span>
+          <span class="case-role">Основатель · Продукт · Growth</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">PolarLights.pro — TravelTech платформа с нуля</div>
+          <p class="case-desc">Я основала и создала PolarLights.pro — платформу для прогнозирования северного сияния с интерактивной картой, предсказаниями KP-индекса, мобильным приложением с пуш-уведомлениями и туристической экосистемой. Полностью самостоятельно — от идеи до международного продукта.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">6500</div><div class="met-l">Пользователей в день на пике</div></div>
+            <div class="met"><div class="met-v">100</div><div class="met-l">Установок приложения в день</div></div>
+            <div class="met"><div class="met-v">🌍</div><div class="met-l">США, Европа, Азия</div></div>
+          </div>
+          <p class="case-what"><strong>Что я сделала:</strong> Разработала концепцию и UX/UI продукта. Интегрировала научные данные NOAA для прогнозов в реальном времени. Запустила мобильное приложение с пуш-уведомлениями, управляла ASO. Выстроила полную SEO-стратегию и контент-экосистему. Локализовала продукт на китайский, финский, норвежский и английский языки. Разработала модель монетизации. Единственный проект в портфолио, где я одновременно была клиентом, маркетологом и владельцем продукта.</p>
+          <ul class="blist">
+            <li>Продуктовая стратегия</li>
+            <li>Мобильное приложение</li>
+            <li>Международное SEO</li>
+            <li>Growth hacking</li>
+            <li>Локализация</li>
+            <li>Монетизация</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- A&J -->
+      <div class="case clinic">
+        <div class="case-top">
+          <span class="case-niche">Медицинская эстетика</span>
+          <span class="case-role">Полный маркетинговый стек · Автоматизация · SaaS</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">A&amp;J Aesthetic Clinic — Полный маркетинговый перезапуск</div>
+          <p class="case-desc">Многоканальная эстетическая клиника с дорогой рекламой, потерянными лидами в разных каналах, перегруженными администраторами и нулевой автоматизацией. Я полностью перестроила маркетинговую и операционную инфраструктуру — включая разработку собственного SaaS-инструмента для коммуникаций с клиентами.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">3×</div><div class="met-l">Снижение затрат на маркетинг</div></div>
+            <div class="met"><div class="met-v">70%</div><div class="met-l">Записей автоматизировано</div></div>
+            <div class="met"><div class="met-v">SaaS</div><div class="met-l">Собственный инструмент разработан</div></div>
+          </div>
+          <p class="case-what"><strong>Что я сделала:</strong> Создала первый полноценный сайт клиники и перезапустила контекстную рекламу — снизила стоимость визита. Внедрила CRM для объединения всех входящих каналов. Создала собственный SaaS для сообщений, интегрированный с CRM. Сегментировала базу пациентов и внедрила AI-персонализацию предложений. Автоматизировала 70% записей на приём.</p>
+          <ul class="blist">
+            <li>Внедрение CRM</li>
+            <li>Собственный SaaS</li>
+            <li>Маркетинговая автоматизация</li>
+            <li>Контекстная реклама</li>
+            <li>AI-персонализация</li>
+            <li>Сегментация базы</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RESTAURANT -->
+      <div class="case restaurant">
+        <div class="case-top">
+          <span class="case-niche">Ресторан · F&amp;B</span>
+          <span class="case-role">Перформанс-маркетинг · Лидогенерация</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Ресторанная группа — Перезапуск перформанс-маркетинга</div>
+          <p class="case-desc">Ресторанный проект с высокой стоимостью лида, низким качеством трафика и высоким показателем отказов. Провела аудит всей digital-воронки и перестроила стратегию привлечения с нуля.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">5×</div><div class="met-l">Больше заявок</div></div>
+            <div class="met"><div class="met-v">−30%</div><div class="met-l">Стоимость лида</div></div>
+            <div class="met"><div class="met-v">−25%</div><div class="met-l">Показатель отказов</div></div>
+          </div>
+          <ul class="blist">
+            <li>Аудит кампаний</li>
+            <li>Перераспределение бюджета</li>
+            <li>Оптимизация воронки</li>
+            <li>Качество трафика</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- KOLA -->
+      <div class="case travel">
+        <div class="case-top">
+          <span class="case-niche">Туризм · Путешествия</span>
+          <span class="case-role">Growth Marketing · Международные рынки</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Туры по Кольскому полуострову — Лидер регионального рынка</div>
+          <p class="case-desc">Туристический стартап с устаревшим сайтом, дорогими лидами и нулевой аналитикой. Вывела его в число самых известных компаний в сфере приключенческого туризма региона. Удержала поток заявок в период двух крупных экономических кризисов.</p>
+          <div class="metrics">
+            <div class="met"><div class="met-v">#1</div><div class="met-l">Лидер регионального туристического рынка</div></div>
+            <div class="met"><div class="met-v">↓</div><div class="met-l">Наименьший CPL в регионе</div></div>
+            <div class="met"><div class="met-v">🌍</div><div class="met-l">Рынки Китая и Индии</div></div>
+          </div>
+          <p class="case-what"><strong>Что я сделала:</strong> Полный редизайн сайта с конверсионной архитектурой. Многоканальная система лидогенерации. SEO-стратегия и контент-маркетинг. Настройка CRM с сегментацией клиентов и цепочками удержания. Международные кампании для Китая и Индии — адаптация сообщений и управление зарубежными рекламными платформами. Управление командой маркетинга и всеми подрядчиками.</p>
+          <ul class="blist">
+            <li>Международный маркетинг</li>
+            <li>SEO и контент</li>
+            <li>CRM и удержание</li>
+            <li>Антикризисный маркетинг</li>
+            <li>Управление командой</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="s-tag">Услуги</div>
+    <h2 class="s-title">Что я могу сделать<br>для вашего бизнеса</h2>
+    <p class="s-desc">Работаю как стратегический партнёр, а не просто исполнитель.<br>Вот где я приношу наибольшую ценность.</p>
+    <div class="svc-grid">
+      <div class="svc s1">
+        <h3>Реклама</h3>
+        <p>Полная настройка и ведение рекламы: стратегия, подбор аудиторий, работа с креативами, A/B-тестирование, оптимизация бюджета и отчётность. Строю кампании, которые масштабируются, а не просто тратят деньги.</p>
+      </div>
+      <div class="svc s2">
+        <h3>Маркетинговая инфраструктура</h3>
+        <p>Для бизнесов, которым нужно больше чем реклама — проектирую и внедряю полную систему привлечения и удержания: CRM, автоматизация, цепочки прогрева лидов, аналитика.</p>
+      </div>
+      <div class="svc s3">
+        <h3>Аудит и стратегия</h3>
+        <p>Полный аудит вашей маркетинговой воронки — где теряются лиды, что дорого стоит, что не работает. Результат: чёткий план действий с приоритетами и ожидаемыми результатами.</p>
+      </div>
+      <div class="svc s4">
+        <h3>Постоянное сопровождение</h3>
+        <p>Ежемесячное сопровождение для бизнесов, которым нужен выделенный маркетолог без найма в штат. Веду кампании, отслеживаю результаты и непрерывно оптимизирую.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="s-tag">Почему я</div>
+    <h2 class="s-title">Я была по обе<br>стороны.</h2>
+    <p class="s-desc">Как основатель и маркетолог одновременно, я смотрю на задачи так, как большинство специалистов не умеют.</p>
+    <div class="why-list">
+      <div class="why">
+        <h4>01. Мыслю системами</h4>
+        <p>Строила маркетинговую инфраструктуру с нуля несколько раз — сайты, CRM, инструменты автоматизации, аналитику. Когда я веду вашу рекламу, я думаю о том, что происходит после клика.</p>
+      </div>
+      <div class="why">
+        <h4>02. Создала собственный продукт</h4>
+        <p>PolarLights.pro — живая работающая платформа, которую я разработала, запустила и вывела на тысячи ежедневных пользователей по всему миру. Знаю, что значит вкладывать собственные деньги и репутацию в маркетинговые решения.</p>
+      </div>
+      <div class="why">
+        <h4>03. Работала в реально сложных нишах</h4>
+        <p>Медицинская реклама, франшизный маркетинг в нескольких локациях, международный туризм в отдалённые направления — если я умею делать это, справлюсь и с вашим проектом.</p>
+      </div>
+      <div class="why">
+        <h4>04. Чёткая письменная коммуникация</h4>
+        <p>Работаю удалённо и общаюсь письменно — структурированные обновления, понятная аргументация. Вы всегда знаете что происходит и почему.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <p class="contact-statement">Всегда открыта к новым проектам. Пишите — поговорим о росте, маркетинге и системах, которые приводят клиентов.</p>
+    <a href="https://t.me/nadigrbt" target="_blank" class="contact-email-pill">Написать в Telegram</a>
+  </div>
+</section>
+
+<script>
+  if (history.scrollRestoration) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+</script>
+</body>
+</html>
