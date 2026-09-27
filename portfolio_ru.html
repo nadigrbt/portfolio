@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Надежда Горбатенко — Маркетолог-стратег</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Bounded';
+  src: url('Bounded-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #EEEAE4;
+  --text: #0D0D0D;
+  --muted: #888580;
+  --border: #C8C4BC;
+  --accent: #0D0D0D;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  height: 52px;
+  display: flex; align-items: center;
+}
+.nav-inner {
+  width: 100%; max-width: 1280px; margin: 0 auto;
+  padding: 0 40px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text);
+}
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-right {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-right:hover { color: var(--text); }
+
+/* ─── HERO ─── */
+.hero {
+  padding: 120px 40px 0;
+  max-width: 1280px; margin: 0 auto;
+}
+.hero-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 32px;
+}
+.hero-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); line-height: 1.8;
+}
+.hero-tags {
+  text-align: right;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); line-height: 2;
+}
+.hero-h1 {
+  font-family: 'Bounded', 'Montserrat', sans-serif;
+  font-size: clamp(52px, 8vw, 120px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+.hero-h1 .gray { color: var(--muted); }
+.hero-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-desc {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.7; max-width: 280px;
+}
+.hero-geo {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted);
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-geo::before {
+  content: '';
+  display: block; width: 32px; height: 1px;
+  background: var(--muted);
+}
+
+/* ─── STATS ─── */
+.stats {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 40px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.stat {
+  padding: 36px 0;
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.stat:last-child { border-right: none; }
+.stat-n {
+  font-family: 'Bounded', 'Montserrat', sans-serif;
+  font-size: 40px; font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text); line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-l {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── CASES ─── */
+.cases { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+.case { border-bottom: 1px solid var(--border); padding: 64px 0 0; }
+
+.case-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
+}
+.case-label {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+.case-all {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+}
+.case-all:hover { color: var(--text); }
+
+.case-title-row {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 28px; gap: 40px;
+}
+.case-name {
+  font-family: 'Bounded', 'Montserrat', sans-serif;
+  font-size: clamp(52px, 8vw, 120px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  color: var(--text);
+  flex-shrink: 0;
+}
+.case-info { text-align: right; padding-bottom: 8px; }
+.case-counter {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.1em; color: var(--muted);
+  margin-bottom: 8px;
+}
+.case-short {
+  font-size: 12px; color: var(--muted);
+  line-height: 1.6; max-width: 240px; margin-left: auto;
+}
+.case-short strong {
+  display: block; font-weight: 600; color: var(--text);
+  margin-bottom: 4px;
+}
+
+.case-img-wrap {
+  position: relative; width: 100%;
+  height: clamp(180px, 24vw, 320px);
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.case-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.case-img-wrap:hover img { transform: scale(1.02); }
+.case-img-wrap { cursor: pointer; }
+
+.case-img-tags {
+  position: absolute; bottom: 20px; left: 24px;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  line-height: 2;
+}
+
+/* ─── EXPAND ─── */
+.case-expand { padding: 0; }
+.case-expand-btn {
+  width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 0;
+  background: none; border: none; cursor: pointer;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+  border-top: 1px solid var(--border);
+}
+.case-expand-btn:hover { color: var(--text); }
+.case-expand-arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.case-expand-btn.open .case-expand-arrow { transform: rotate(180deg); }
+
+.case-details {
+  display: none;
+  padding: 0 0 48px;
+  border-top: 1px solid var(--border);
+}
+.case-details.open { display: block; }
+
+.case-details-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding-top: 36px;
+}
+.case-details p {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.8; margin-bottom: 20px;
+}
+.case-details h4 {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--text); margin-bottom: 12px;
+}
+.case-metrics {
+  display: flex; gap: 40px; margin-bottom: 28px;
+}
+.case-met-v {
+  font-family: 'Bounded', 'Montserrat', sans-serif;
+  font-size: 36px; font-weight: 900;
+  letter-spacing: -0.02em; line-height: 1;
+  margin-bottom: 4px; color: var(--text);
+}
+.case-met-l {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted);
+}
+.tags-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 5px 12px; border-radius: 20px;
+}
+
+
+
+/* ─── FOOTER CTA ─── */
+.footer-cta {
+  max-width: 1280px; margin: 0 auto;
+  padding: 80px 40px 100px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.footer-label {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px;
+}
+.footer-h2 {
+  font-family: 'Bounded', 'Montserrat', sans-serif;
+  font-size: clamp(40px, 6vw, 88px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--text);
+}
+.footer-right {
+  text-align: right; padding-bottom: 8px;
+}
+.footer-sub {
+  font-size: 11px; color: var(--muted);
+  line-height: 1.7; max-width: 260px;
+  margin-bottom: 24px; margin-left: auto;
+}
+.footer-btn {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--bg);
+  background: var(--text);
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.footer-btn:hover { opacity: 0.75; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero { padding: 80px 20px 0; }
+  .hero-top { flex-direction: column; gap: 12px; }
+  .hero-tags { text-align: left; }
+  .hero-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .hero-geo::before { display: none; }
+  .stats { padding: 0 20px; grid-template-columns: 1fr 1fr; }
+  .stat { border-right: none; border-bottom: 1px solid var(--border); }
+  .cases { padding: 0 20px; }
+  .case-title-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .case-info { text-align: left; }
+  .case-short { margin-left: 0; }
+  .case-details-inner { grid-template-columns: 1fr; gap: 24px; }
+  .footer-cta { flex-direction: column; gap: 40px; padding: 60px 20px 80px; }
+  .footer-right { text-align: left; }
+  .footer-sub { margin-left: 0; }
+  .nav-inner { padding: 0 20px; }
+}
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  nav { display: none !important; }
+  body { background: #EEEAE4 !important; font-size: 11px; }
+  .hero { padding: 40px 40px 0 !important; }
+  .cases { padding: 0 40px !important; }
+  .stats { padding: 0 40px !important; }
+  .footer-cta { padding: 40px 40px 60px !important; }
+  .case-expand-btn { display: none !important; }
+  .case-details { display: block !important; max-height: none !important; opacity: 1 !important; }
+  .case { page-break-inside: avoid; }
+  section { page-break-inside: avoid; }
+  h1, h2, h3 { page-break-after: avoid; }
+  .case-img { max-height: 180px !important; }
+  a { text-decoration: none !important; color: inherit !important; }
+  .footer-btn { border: 2px solid #0D0D0D !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Nadezhda Gorbatenko</div>
+    <div class="nav-links">
+      <a href="#cases">Маркетинг</a>
+      <a href="#dev">Разработка</a>
+      <a href="#contact">Контакты</a>
+    </div>
+    <a href="https://t.me/nadigrb" target="_blank" class="nav-right">@nadigrbt</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-top">
+    <div class="hero-label">Marketing Strategist<br>& Founder</div>
+    <div class="hero-tags">
+      Стратегия<br>
+      Рост бизнеса<br>
+      Продукты<br>
+      Автоматизация
+    </div>
+  </div>
+
+  <h1 class="hero-h1">Маркетинг <span class="gray">строит<br>системы</span><br>Разработка <span class="gray">их<br>запускает</span></h1>
+
+  <div class="hero-bottom">
+    <p class="hero-desc">Помогаю бизнесам расти с помощью стратегии, маркетинга, продуктов и автоматизации.</p>
+    <div class="hero-geo">Worldwide</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-n">8×</div>
+    <div class="stat-l">Снижение CPL в одном из проектов</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">6.5K</div>
+    <div class="stat-l">Пользователей в день<br>на своём продукте</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">3</div>
+    <div class="stat-l">Собственных<br>продукта</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">∞</div>
+    <div class="stat-l">Возможностей<br>для роста</div>
+  </div>
+</div>
+
+<!-- CASES -->
+<div class="cases" id="cases">
+
+  <!-- 01 POLARLIGHTS -->
+  <div class="case">
+    <div class="case-meta">
+      <span class="case-label">Проекты / 01</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">POLARLIGHTS</div>
+      <div class="case-info">
+        <div class="case-counter">01 / 04</div>
+        <div class="case-short">
+          <strong>TravelTech платформа с нуля</strong>
+          Продукт · Маркетинг · Рост
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-polarlights.png" alt="PolarLights.pro">
+      <div class="case-img-tags">Web / iOS / Android<br>Global</div>
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <div class="case-metrics">
+              <div><div class="case-met-v">6500</div><div class="case-met-l">Пользователей в день</div></div>
+              <div><div class="case-met-v">100</div><div class="case-met-l">Установок приложения / день</div></div>
+            </div>
+            <h4>О проекте</h4>
+            <p>Создала PolarLights.pro с нуля — платформу для прогнозирования северного сияния с интерактивной картой, предсказаниями KP-индекса, мобильным приложением с пуш-уведомлениями и туристической экосистемой.</p>
+            <p>Проект, где я одновременно была клиентом, маркетологом и владельцем продукта.</p>
+          </div>
+          <div>
+            <h4>Что сделано</h4>
+            <p>Разработала концепцию и UX/UI. Интегрировала данные NOAA для прогнозов в реальном времени. Запустила мобильное приложение, управляла ASO. Локализовала продукт на 3 языка. Выстроила SEO-стратегию и модель монетизации.</p>
+            <div class="tags-row">
+              <span class="tag">Продуктовая стратегия</span>
+              <span class="tag">Мобильное приложение</span>
+              <span class="tag">SEO</span>
+              <span class="tag">Growth</span>
+              <span class="tag">Локализация</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 A&J -->
+  <div class="case">
+    <div class="case-meta">
+      <span class="case-label">Проекты / 02</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">КЛИНИКА</div>
+      <div class="case-info">
+        <div class="case-counter">02 / 04</div>
+        <div class="case-short">
+          <strong>Медицинская эстетика</strong>
+          Стратегия · Маркетинг · CRM · SaaS
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-clinic.png" alt="A&J Aesthetic Clinic">
+      <div class="case-img-tags">Brand / Digital / CRM</div>
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <div class="case-metrics">
+              <div><div class="case-met-v">3×</div><div class="case-met-l">Снижение затрат</div></div>
+              <div><div class="case-met-v">70%</div><div class="case-met-l">Записей автоматизировано</div></div>
+            </div>
+            <h4>О проекте</h4>
+            <p>Многоканальная эстетическая клиника с дорогой рекламой, потерянными лидами и нулевой автоматизацией. Полностью перестроила маркетинговую и операционную инфраструктуру.</p>
+          </div>
+          <div>
+            <h4>Что сделано</h4>
+            <p>Создала сайт и перезапустила рекламу. Внедрила CRM. Разработала собственный SaaS для коммуникаций с пациентами. Автоматизировала 70% записей на приём.</p>
+            <div class="tags-row">
+              <span class="tag">CRM</span>
+              <span class="tag">SaaS</span>
+              <span class="tag">Автоматизация</span>
+              <span class="tag">AI-персонализация</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 RESTAURANT -->
+  <div class="case">
+    <div class="case-meta">
+      <span class="case-label">Проекты / 03</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">РЕСТОРАНЫ</div>
+      <div class="case-info">
+        <div class="case-counter">03 / 04</div>
+        <div class="case-short">
+          <strong>Ресторанная группа</strong>
+          Перформанс-маркетинг · Лидогенерация
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-restaurant.png" alt="Ресторан">
+      <div class="case-img-tags">Brand / Strategy / SMM</div>
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <div class="case-metrics">
+              <div><div class="case-met-v">5×</div><div class="case-met-l">Больше заявок</div></div>
+              <div><div class="case-met-v">−30%</div><div class="case-met-l">Стоимость лида</div></div>
+            </div>
+            <h4>О проекте</h4>
+            <p>Ресторанный проект с высокой стоимостью лида, низким качеством трафика и высоким показателем отказов. Провела аудит всей digital-воронки и перестроила стратегию привлечения с нуля.</p>
+          </div>
+          <div>
+            <h4>Что сделано</h4>
+            <p>Аудит кампаний, перераспределение бюджета, оптимизация воронки. Результат — в 5 раз больше заявок при снижении стоимости лида на 30%.</p>
+            <div class="tags-row">
+              <span class="tag">Аудит</span>
+              <span class="tag">Перформанс</span>
+              <span class="tag">Лидогенерация</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 TRAVEL -->
+  <div class="case">
+    <div class="case-meta">
+      <span class="case-label">Проекты / 04</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">ТУРИЗМ</div>
+      <div class="case-info">
+        <div class="case-counter">04 / 04</div>
+        <div class="case-short">
+          <strong>Туры по Кольскому полуострову</strong>
+          Продукт · Маркетинг · Международные рынки
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-travel.png" alt="Туризм">
+      <div class="case-img-tags">Product / Marketing / Sales<br>Arctic</div>
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <div class="case-metrics">
+              <div><div class="case-met-v">#1</div><div class="case-met-l">В регионе</div></div>
+              <div><div class="case-met-v">🌍</div><div class="case-met-l">Китай, Индия</div></div>
+            </div>
+            <h4>О проекте</h4>
+            <p>Туристический стартап с нулевой аналитикой и дорогими лидами. Вывела в лидеры приключенческого туризма региона. Удержала поток заявок в период двух экономических кризисов.</p>
+          </div>
+          <div>
+            <h4>Что сделано</h4>
+            <p>Полный редизайн сайта, многоканальная лидогенерация, SEO, CRM. Международные кампании для рынков Китая и Индии. Управление командой маркетинга.</p>
+            <div class="tags-row">
+              <span class="tag">Международный маркетинг</span>
+              <span class="tag">SEO</span>
+              <span class="tag">CRM</span>
+              <span class="tag">Антикризис</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05–08 DEV CASES (без картинок) -->
+  <div class="case" id="dev">
+    <div class="case-meta">
+      <span class="case-label">Разработка / 01</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">AI BOT</div>
+      <div class="case-info">
+        <div class="case-counter">05 / 08</div>
+        <div class="case-short">
+          <strong>AI-бот для общения с клиентами</strong>
+          CRM · Telegram · Max · Все соцсети
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-aibot.png" alt="AI BOT">
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <h4>О проекте</h4>
+            <p>Бот работает по базе данных бизнеса, генерирует ответы с помощью ИИ и ведёт переписку с клиентами вместо администратора — одновременно во всех социальных сетях через CRM.</p>
+          </div>
+          <div>
+            <h4>Что реализовано</h4>
+            <div class="tags-row">
+              <span class="tag">База данных бизнеса</span>
+              <span class="tag">AI-генерация ответов</span>
+              <span class="tag">CRM-интеграция</span>
+              <span class="tag">Все соцсети</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-meta">
+      <span class="case-label">Разработка / 02</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">БОТЫ</div>
+      <div class="case-info">
+        <div class="case-counter">06 / 08</div>
+        <div class="case-short">
+          <strong>Telegram и Max боты</strong>
+          Рассылки · Аналитика · Обучение
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-bots.png" alt="БОТЫ">
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <h4>О проекте</h4>
+            <p>Разработка ботов для бизнеса и под собственные задачи. От точечных рассылок до AI-аналитики рекламных кампаний.</p>
+          </div>
+          <div>
+            <h4>Что реализовано</h4>
+            <div class="tags-row">
+              <span class="tag">Рассылки с админ-панелью</span>
+              <span class="tag">AI-аналитика рекламы</span>
+              <span class="tag">API рекламных кабинетов</span>
+              <span class="tag">Языковой бот</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-meta">
+      <span class="case-label">Разработка / 03</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">МИНИ-ИГРА</div>
+      <div class="case-info">
+        <div class="case-counter">07 / 08</div>
+        <div class="case-short">
+          <strong>Интерактивный виджет для сайта</strong>
+          JavaScript · Tilda · Геймификация
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-minigame.png" alt="МИНИ-ИГРА">
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <h4>О проекте</h4>
+            <p>Интерактивный виджет, встроенный на сайт тур-оператора. Двухуровневая система призов, лиды автоматически улетают в Telegram. Чистый JS, без фреймворков — интеграция на рабочий сайт.</p>
+          </div>
+          <div>
+            <h4>Что реализовано</h4>
+            <div class="tags-row">
+              <span class="tag">Геймификация</span>
+              <span class="tag">Лидогенерация</span>
+              <span class="tag">Telegram-интеграция</span>
+              <span class="tag">Интеграция на сайт</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-meta">
+      <span class="case-label">Разработка / 04</span>
+    </div>
+    <div class="case-title-row">
+      <div class="case-name">SAAS</div>
+      <div class="case-info">
+        <div class="case-counter">08 / 08</div>
+        <div class="case-short">
+          <strong>SaaS для коммуникаций с клиентами</strong>
+          AI · CRM · Автоматизация
+        </div>
+      </div>
+    </div>
+    <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
+      <img src="img-saas.png" alt="SAAS">
+    </div>
+    <div class="case-expand">
+      <button class="case-expand-btn" onclick="toggleCase(this)">
+        Подробнее о проекте
+        <span class="case-expand-arrow">↓</span>
+      </button>
+      <div class="case-details">
+        <div class="case-details-inner">
+          <div>
+            <h4>О проекте</h4>
+            <p>Собственный инструмент для персонализированных коммуникаций, разработанный для клиента в сфере медицинской эстетики. Интеграция с CRM, AI-подбор предложений, автоматизация 70% записей.</p>
+          </div>
+          <div>
+            <h4>Что реализовано</h4>
+            <div class="tags-row">
+              <span class="tag">Персонализация</span>
+              <span class="tag">CRM-интеграция</span>
+              <span class="tag">AI</span>
+              <span class="tag">Автоматизация</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta" id="contact">
+  <div>
+    <div class="footer-label">Дальше —</div>
+    <h2 class="footer-h2">Создадим<br>что‑то<br>больше?</h2>
+  </div>
+  <div class="footer-right">
+    <p class="footer-sub">Открыта к новым проектам, коллаборациям и интересным задачам.</p>
+    <a href="https://t.me/nadigrb" target="_blank" class="footer-btn">Связаться →</a>
+  </div>
+</div>
+
+<script>
+function toggleCase(btn) {
+  const details = btn.nextElementSibling;
+  const isOpen = details.classList.contains('open');
+  details.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+function toggleCaseFromImg(el) {
+  const caseBlock = el.closest('.case');
+  const btn = caseBlock.querySelector('.case-expand-btn');
+  toggleCase(btn);
+}
+</script>
+</body>
+</html>
