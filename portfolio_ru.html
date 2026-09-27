@@ -48,17 +48,12 @@ nav {
 .nav-inner {
   width: 100%; max-width: 1280px; margin: 0 auto;
   padding: 0 40px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.nav-logo {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--text);
+  display: flex; align-items: center; justify-content: space-between;
 }
 .nav-links { display: flex; gap: 32px; }
 .nav-links a {
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--muted); text-decoration: none;
   transition: color 0.2s;
 }
@@ -78,27 +73,27 @@ nav {
 }
 .hero-top {
   display: flex; justify-content: space-between; align-items: flex-start;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 .hero-label {
-  font-size: 10px; font-weight: 600;
+  font-size: 10px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--muted); line-height: 1.8;
 }
 .hero-tags {
-  text-align: right;
-  font-size: 10px; font-weight: 600;
+  font-size: 10px; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--muted); line-height: 2;
+  color: var(--muted); text-align: right;
+  line-height: 1.8;
 }
 .hero-h1 {
   font-family: 'Bounded', 'Montserrat', sans-serif;
   font-size: clamp(52px, 8vw, 120px);
   font-weight: 900;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: var(--text);
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 .hero-h1 .gray { color: var(--muted); }
 .hero-bottom {
@@ -147,6 +142,7 @@ nav {
   font-size: 9px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--muted);
+  line-height: 1.6;
 }
 
 /* ─── CASES ─── */
@@ -171,30 +167,35 @@ nav {
 .case-all:hover { color: var(--text); }
 
 .case-title-row {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 28px; gap: 40px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 32px;
+  gap: 40px;
 }
 .case-name {
   font-family: 'Bounded', 'Montserrat', sans-serif;
   font-size: clamp(52px, 8vw, 120px);
   font-weight: 900;
-  letter-spacing: -0.03em;
   line-height: 0.9;
+  letter-spacing: -0.02em;
   color: var(--text);
-  flex-shrink: 0;
 }
-.case-info { text-align: right; padding-bottom: 8px; }
+.case-info {
+  text-align: right; flex-shrink: 0;
+  padding-top: 8px;
+}
 .case-counter {
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.1em; color: var(--muted);
-  margin-bottom: 8px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 12px;
 }
 .case-short {
-  font-size: 12px; color: var(--muted);
-  line-height: 1.6; max-width: 240px; margin-left: auto;
+  font-size: 12px; line-height: 1.6;
+  color: var(--muted);
+  margin-left: 40px;
 }
 .case-short strong {
-  display: block; font-weight: 600; color: var(--text);
+  display: block; color: var(--text);
+  font-size: 13px; font-weight: 600;
   margin-bottom: 4px;
 }
 
@@ -203,6 +204,7 @@ nav {
   height: clamp(180px, 24vw, 320px);
   overflow: hidden;
   background: #1a1a1a;
+  cursor: pointer;
 }
 .case-img-wrap img {
   width: 100%; height: 100%;
@@ -211,18 +213,17 @@ nav {
   transition: transform 0.6s ease;
 }
 .case-img-wrap:hover img { transform: scale(1.02); }
-.case-img-wrap { cursor: pointer; }
-
 .case-img-tags {
-  position: absolute; bottom: 20px; left: 24px;
+  position: absolute; bottom: 16px; right: 16px;
   font-size: 9px; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase;
+  letter-spacing: 0.14em; text-transform: uppercase;
   color: rgba(255,255,255,0.7);
-  line-height: 2;
+  text-align: right; line-height: 1.8;
 }
 
-/* ─── EXPAND ─── */
-.case-expand { padding: 0; }
+.case-expand {
+  border-top: none;
+}
 .case-expand-btn {
   width: 100%;
   display: flex; justify-content: space-between; align-items: center;
@@ -251,87 +252,79 @@ nav {
 .case-details.open { display: block; }
 
 .case-details-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  padding-top: 36px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 40px; padding-top: 40px;
 }
-.case-details p {
-  font-size: 13px; color: var(--muted);
-  line-height: 1.8; margin-bottom: 20px;
-}
-.case-details h4 {
+.case-details-inner h4 {
   font-size: 9px; font-weight: 700;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--text); margin-bottom: 12px;
+  color: var(--muted); margin-bottom: 12px;
 }
+.case-details-inner p {
+  font-size: 13px; line-height: 1.7; color: var(--text);
+}
+
 .case-metrics {
-  display: flex; gap: 40px; margin-bottom: 28px;
+  display: flex; gap: 40px; margin-bottom: 32px;
 }
 .case-met-v {
   font-family: 'Bounded', 'Montserrat', sans-serif;
   font-size: 36px; font-weight: 900;
   letter-spacing: -0.02em; line-height: 1;
-  margin-bottom: 4px; color: var(--text);
+  margin-bottom: 4px;
 }
 .case-met-l {
-  font-size: 9px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted);
-}
-.tags-row { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag {
   font-size: 9px; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--muted);
-  border: 1px solid var(--border);
-  padding: 5px 12px; border-radius: 20px;
 }
 
-
+.tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.tag {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
 
 /* ─── FOOTER CTA ─── */
 .footer-cta {
   max-width: 1280px; margin: 0 auto;
-  padding: 80px 40px 100px;
+  padding: 120px 40px 100px;
   display: flex; justify-content: space-between; align-items: flex-end;
+  border-top: 1px solid var(--border);
 }
 .footer-label {
-  font-size: 9px; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 16px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 24px;
 }
 .footer-h2 {
   font-family: 'Bounded', 'Montserrat', sans-serif;
-  font-size: clamp(40px, 6vw, 88px);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  color: var(--text);
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 900; line-height: 0.9;
+  letter-spacing: -0.02em;
 }
-.footer-right {
-  text-align: right; padding-bottom: 8px;
-}
+.footer-right { text-align: right; }
 .footer-sub {
-  font-size: 11px; color: var(--muted);
+  font-size: 13px; color: var(--muted);
   line-height: 1.7; max-width: 260px;
-  margin-bottom: 24px; margin-left: auto;
+  margin-left: auto; margin-bottom: 32px;
 }
 .footer-btn {
   display: inline-block;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--bg);
-  background: var(--text);
   padding: 14px 32px;
-  text-decoration: none;
-  transition: opacity 0.2s;
+  border: 2px solid var(--text);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text); text-decoration: none;
+  transition: background 0.2s, color 0.2s;
 }
-.footer-btn:hover { opacity: 0.75; }
+.footer-btn:hover { background: var(--text); color: var(--bg); }
 
-/* ─── MOBILE ─── */
+/* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
   .hero { padding: 80px 20px 0; }
   .hero-top { flex-direction: column; gap: 12px; }
   .hero-tags { text-align: left; }
@@ -371,10 +364,8 @@ nav {
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">Nadezhda Gorbatenko</div>
     <div class="nav-links">
       <a href="#cases">Маркетинг</a>
       <a href="#dev">Разработка</a>
@@ -435,7 +426,7 @@ nav {
     <div class="case-title-row">
       <div class="case-name">POLARLIGHTS</div>
       <div class="case-info">
-        <div class="case-counter">01 / 04</div>
+        <div class="case-counter">01 / 08</div>
         <div class="case-short">
           <strong>TravelTech платформа с нуля</strong>
           Продукт · Маркетинг · Рост
@@ -459,17 +450,16 @@ nav {
               <div><div class="case-met-v">100</div><div class="case-met-l">Установок приложения / день</div></div>
             </div>
             <h4>О проекте</h4>
-            <p>Создала PolarLights.pro с нуля — платформу для прогнозирования северного сияния с интерактивной картой, предсказаниями KP-индекса, мобильным приложением с пуш-уведомлениями и туристической экосистемой.</p>
-            <p>Проект, где я одновременно была клиентом, маркетологом и владельцем продукта.</p>
+            <p>Проект, где я одновременно была клиентом, маркетологом и владельцем продукта. Построила TravelTech платформу с нуля: сайт, iOS и Android приложение, партнёрская сеть, монетизация.</p>
           </div>
           <div>
-            <h4>Что сделано</h4>
-            <p>Разработала концепцию и UX/UI. Интегрировала данные NOAA для прогнозов в реальном времени. Запустила мобильное приложение, управляла ASO. Локализовала продукт на 3 языка. Выстроила SEO-стратегию и модель монетизации.</p>
+            <h4>Что реализовано</h4>
+            <p>Локализовала продукт на 3 языка. Выстроила SEO-стратегию и модель монетизации.</p>
             <div class="tags-row">
-              <span class="tag">Продуктовая стратегия</span>
-              <span class="tag">Мобильное приложение</span>
+              <span class="tag">TravelTech</span>
               <span class="tag">SEO</span>
-              <span class="tag">Growth</span>
+              <span class="tag">Монетизация</span>
+              <span class="tag">iOS / Android</span>
               <span class="tag">Локализация</span>
             </div>
           </div>
@@ -478,7 +468,7 @@ nav {
     </div>
   </div>
 
-  <!-- 02 A&J -->
+  <!-- 02 КЛИНИКА -->
   <div class="case">
     <div class="case-meta">
       <span class="case-label">Проекты / 02</span>
@@ -486,15 +476,15 @@ nav {
     <div class="case-title-row">
       <div class="case-name">КЛИНИКА</div>
       <div class="case-info">
-        <div class="case-counter">02 / 04</div>
+        <div class="case-counter">02 / 08</div>
         <div class="case-short">
-          <strong>Медицинская эстетика</strong>
-          Стратегия · Маркетинг · CRM · SaaS
+          <strong>A&J Aesthetic Clinic</strong>
+          Стратегия · CRM · Автоматизация
         </div>
       </div>
     </div>
     <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
-      <img src="img-clinic.png" alt="A&J Aesthetic Clinic">
+      <img src="img-clinic.png" alt="A&J Clinic">
       <div class="case-img-tags">Brand / Digital / CRM</div>
     </div>
     <div class="case-expand">
@@ -506,20 +496,21 @@ nav {
         <div class="case-details-inner">
           <div>
             <div class="case-metrics">
-              <div><div class="case-met-v">3×</div><div class="case-met-l">Снижение затрат</div></div>
+              <div><div class="case-met-v">3×</div><div class="case-met-l">Снижение стоимости заявки</div></div>
               <div><div class="case-met-v">70%</div><div class="case-met-l">Записей автоматизировано</div></div>
             </div>
             <h4>О проекте</h4>
-            <p>Многоканальная эстетическая клиника с дорогой рекламой, потерянными лидами и нулевой автоматизацией. Полностью перестроила маркетинговую и операционную инфраструктуру.</p>
+            <p>Полный маркетинговый перезапуск клиники эстетической медицины. Пересобрала позиционирование, воронку, рекламу и автоматизацию коммуникаций с нуля.</p>
           </div>
           <div>
-            <h4>Что сделано</h4>
-            <p>Создала сайт и перезапустила рекламу. Внедрила CRM. Разработала собственный SaaS для коммуникаций с пациентами. Автоматизировала 70% записей на приём.</p>
+            <h4>Что реализовано</h4>
+            <p>Разработала собственный SaaS-инструмент для персонализированных коммуникаций с пациентами. Интеграция с CRM, AI-подбор предложений.</p>
             <div class="tags-row">
+              <span class="tag">Performance</span>
               <span class="tag">CRM</span>
               <span class="tag">SaaS</span>
+              <span class="tag">AI</span>
               <span class="tag">Автоматизация</span>
-              <span class="tag">AI-персонализация</span>
             </div>
           </div>
         </div>
@@ -527,7 +518,7 @@ nav {
     </div>
   </div>
 
-  <!-- 03 RESTAURANT -->
+  <!-- 03 РЕСТОРАНЫ -->
   <div class="case">
     <div class="case-meta">
       <span class="case-label">Проекты / 03</span>
@@ -535,15 +526,15 @@ nav {
     <div class="case-title-row">
       <div class="case-name">РЕСТОРАНЫ</div>
       <div class="case-info">
-        <div class="case-counter">03 / 04</div>
+        <div class="case-counter">03 / 08</div>
         <div class="case-short">
           <strong>Ресторанная группа</strong>
-          Перформанс-маркетинг · Лидогенерация
+          Лидогенерация · SMM · Рост
         </div>
       </div>
     </div>
     <div class="case-img-wrap" onclick="toggleCaseFromImg(this)">
-      <img src="img-restaurant.png" alt="Ресторан">
+      <img src="img-restaurant.png" alt="Рестораны">
       <div class="case-img-tags">Brand / Strategy / SMM</div>
     </div>
     <div class="case-expand">
@@ -555,18 +546,18 @@ nav {
         <div class="case-details-inner">
           <div>
             <div class="case-metrics">
-              <div><div class="case-met-v">5×</div><div class="case-met-l">Больше заявок</div></div>
+              <div><div class="case-met-v">5×</div><div class="case-met-l">Рост заявок</div></div>
               <div><div class="case-met-v">−30%</div><div class="case-met-l">Стоимость лида</div></div>
             </div>
             <h4>О проекте</h4>
-            <p>Ресторанный проект с высокой стоимостью лида, низким качеством трафика и высоким показателем отказов. Провела аудит всей digital-воронки и перестроила стратегию привлечения с нуля.</p>
+            <p>Выстроила систему лидогенерации для ресторанной группы. Пересобрала рекламные кампании, внедрила систему удержания гостей и повторных бронирований.</p>
           </div>
           <div>
-            <h4>Что сделано</h4>
-            <p>Аудит кампаний, перераспределение бюджета, оптимизация воронки. Результат — в 5 раз больше заявок при снижении стоимости лида на 30%.</p>
+            <h4>Что реализовано</h4>
             <div class="tags-row">
-              <span class="tag">Аудит</span>
-              <span class="tag">Перформанс</span>
+              <span class="tag">Таргетинг</span>
+              <span class="tag">SMM</span>
+              <span class="tag">Retention</span>
               <span class="tag">Лидогенерация</span>
             </div>
           </div>
@@ -575,7 +566,7 @@ nav {
     </div>
   </div>
 
-  <!-- 04 TRAVEL -->
+  <!-- 04 ТУРИЗМ -->
   <div class="case">
     <div class="case-meta">
       <span class="case-label">Проекты / 04</span>
@@ -583,10 +574,10 @@ nav {
     <div class="case-title-row">
       <div class="case-name">ТУРИЗМ</div>
       <div class="case-info">
-        <div class="case-counter">04 / 04</div>
+        <div class="case-counter">04 / 08</div>
         <div class="case-short">
           <strong>Туры по Кольскому полуострову</strong>
-          Продукт · Маркетинг · Международные рынки
+          Международный маркетинг · SEO
         </div>
       </div>
     </div>
@@ -602,16 +593,11 @@ nav {
       <div class="case-details">
         <div class="case-details-inner">
           <div>
-            <div class="case-metrics">
-              <div><div class="case-met-v">#1</div><div class="case-met-l">В регионе</div></div>
-              <div><div class="case-met-v">🌍</div><div class="case-met-l">Китай, Индия</div></div>
-            </div>
             <h4>О проекте</h4>
-            <p>Туристический стартап с нулевой аналитикой и дорогими лидами. Вывела в лидеры приключенческого туризма региона. Удержала поток заявок в период двух экономических кризисов.</p>
+            <p>Вывела тур-оператора в лидеры регионального рынка. Международные кампании на аудиторию из Китая и Индии. Выстроила воронку от первого касания до продажи тура.</p>
           </div>
           <div>
-            <h4>Что сделано</h4>
-            <p>Полный редизайн сайта, многоканальная лидогенерация, SEO, CRM. Международные кампании для рынков Китая и Индии. Управление командой маркетинга.</p>
+            <h4>Что реализовано</h4>
             <div class="tags-row">
               <span class="tag">Международный маркетинг</span>
               <span class="tag">SEO</span>
@@ -624,7 +610,7 @@ nav {
     </div>
   </div>
 
-  <!-- 05–08 DEV CASES (без картинок) -->
+  <!-- 05 AI BOT -->
   <div class="case" id="dev">
     <div class="case-meta">
       <span class="case-label">Разработка / 01</span>
@@ -667,6 +653,7 @@ nav {
     </div>
   </div>
 
+  <!-- 06 БОТЫ -->
   <div class="case">
     <div class="case-meta">
       <span class="case-label">Разработка / 02</span>
@@ -709,6 +696,7 @@ nav {
     </div>
   </div>
 
+  <!-- 07 МИНИ-ИГРА -->
   <div class="case">
     <div class="case-meta">
       <span class="case-label">Разработка / 03</span>
@@ -719,7 +707,7 @@ nav {
         <div class="case-counter">07 / 08</div>
         <div class="case-short">
           <strong>Интерактивный виджет для сайта</strong>
-          JavaScript · Tilda · Геймификация
+          JavaScript · Геймификация
         </div>
       </div>
     </div>
@@ -751,6 +739,7 @@ nav {
     </div>
   </div>
 
+  <!-- 08 SAAS -->
   <div class="case">
     <div class="case-meta">
       <span class="case-label">Разработка / 04</span>
