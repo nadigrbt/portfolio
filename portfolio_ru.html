@@ -63,6 +63,13 @@ nav {
   letter-spacing: 0.04em;
   color: var(--text);
 }
+.hero-name {
+  display: none;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 24px;
+}
 .nav-right {
   font-size: 10px; font-weight: 600;
   letter-spacing: 0.12em; color: var(--muted);
@@ -331,6 +338,8 @@ nav {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .nav-right { display: none; }
+  .nav-name { display: none; }
+  .hero-name { display: block; }
   .nav-inner { padding: 0 20px; }
 
   .hero { padding: 80px 20px 0; }
@@ -396,6 +405,7 @@ nav {
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-name">Надежда Горбатенко</div>
   <div class="hero-top">
     <div class="hero-label">Marketing Strategist<br>& Founder</div>
     <div class="hero-tags">
